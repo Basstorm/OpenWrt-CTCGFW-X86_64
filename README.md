@@ -10,7 +10,7 @@
     - luci-app-autoreboot
     - luci-app-ddns
     - luci-app-diskman
-    - luci-app-docker
+    - luci-app-docker=M
     - luci-app-dockerman
     - luci-app-filebrowser
     - luci-app-filetransfer
@@ -37,8 +37,8 @@
     - luci-theme-argon
     - luci-theme-argon-mc
     - luci-theme-argon-mod
-    - luci-theme-argonv2
-    - luci-theme-argonv3
+    - luci-theme-argonv2=M
+    - luci-theme-argonv3=M
     - luci-theme-atmaterial
     - luci-theme-bootstrap
     - luci-theme-bootstrap-mod
