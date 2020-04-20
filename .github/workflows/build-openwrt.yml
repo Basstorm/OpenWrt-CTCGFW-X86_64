@@ -25,7 +25,7 @@ jobs:
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
-        docker rmi `docker images -q`
+        #docker rmi `docker images -q`
         sudo -E swapoff /swapfile
         sudo -E rm -rf /swapfile /usr/share/dotnet /usr/local/lib/android /opt/ghc
         sudo -E apt-get remove -y --purge azure-cli ghc zulu* hhvm llvm* firefox google* dotnet* powershell openjdk* mysql* php* mssql-tools msodbcsql17
@@ -81,6 +81,7 @@ jobs:
     - name: Organize files
       run: |
         cp openwrt/bin/targets/x86/64/openwrt-x86-64-combined-squashfs.img Basstorm-openwrt-x86-64-combined-squashfs.img
+        cp openwrt/bin/targets/x86/64/openwrt-x86-64-combined-squashfs.vmdk Basstorm-openwrt-x86-64-combined-squashfs.vmdk
         sha256sum Basstorm* > sha256sums.txt
         cd openwrt/bin && zip -r $GITHUB_WORKSPACE/OpenWrt-x86_64.zip *
 
@@ -93,4 +94,5 @@ jobs:
           OpenWrt-x86_64.zip
           sha256sums.txt
           Basstorm-openwrt-x86-64-combined-squashfs.img
+          Basstorm-openwrt-x86-64-combined-squashfs.vmdk
         allow_override: true
